@@ -2,7 +2,9 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <h4>eda cheatsheet</h4>
+    <div id='header'>
+      <h4>eda cheatsheet</h4>
+    </div>
   )
 }
 

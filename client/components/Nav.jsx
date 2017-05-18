@@ -5,10 +5,10 @@ import topics from '../../data/topics'
 
 const Nav = () => {
   return (
-    <span>
+    <div id='nav'>
       <h1>Nav</h1>
       {getButtons()}
-    </span>
+    </div>
   )
 }
 
