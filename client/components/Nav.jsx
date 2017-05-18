@@ -6,7 +6,7 @@ import topics from '../../data/topics'
 const Nav = () => {
   return (
     <span>
-      <h1>navnavnavnavnav</h1>
+      <h1>Nav</h1>
       {getButtons()}
     </span>
   )
