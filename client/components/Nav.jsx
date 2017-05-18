@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import topics from '../../data/topics'
 
@@ -14,9 +15,9 @@ const Nav = () => {
 function getButtons() {
   return (
     topics.map((topic) => {
-      var url = '/topic/' + {topic.name}
+      var url = '/topic/' + topic.name
       return(
-        <div className="navButt" key={topic.id} href={url}>{topic.name}</div>
+        <div className="navButt" key={topic.id}><Link to={url} >{topic.name}</Link></div>
       )
     })
   )
