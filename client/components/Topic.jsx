@@ -18,7 +18,7 @@ function getCode(topic) {
   return (
     codeData[topic].map((code) => {
       return(
-        <div className="codeSnippet" key={code.id} >{code.text}</div>
+        <div className="codeSnippet" key={code.id} ><Link to='/'>{code.text}</Link></div>
       )
     })
   )
