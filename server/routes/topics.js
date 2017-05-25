@@ -3,11 +3,10 @@ var router = express.Router()
 
 var db = require('../db')
 
-router.get('/', (req, res) => {
+router.get('/topics', (req, res) => {
   db.getTopics(req.app.get('knex'))
     .then((result) => {
       res.json(result)
-      console.log(result)
     })
 })
 
