@@ -38,6 +38,7 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "sqlite3": "^3.1.8",
     "tap-diff": "^0.1.1",

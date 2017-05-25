@@ -1,26 +1,43 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { HashRouter as Router, Link } from 'react-router-dom'
 
-import topics from '../../data/topics'
+import * as api from '../api'
 
-const Nav = () => {
-  return (
-    <div id='nav'>
-      <h1>Nav</h1>
-      {getButtons()}
-    </div>
-  )
-}
+export default class Nav extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      topics: []
+    }
+  }
 
-function getButtons() {
-  return (
-    topics.map((topic) => {
-      var url = '/topic/' + topic.name
-      return(
-        <div className="navButt" key={topic.id}><Link to={url} >{topic.name}</Link></div>
-      )
+  componentDidMount () {
+    api.getTopics((error, topics) => {
+      if (error) {
+        console.log(error)
+      } else {
+        this.setState({topics})
+        console.log(this.state)
+      }
     })
-  )
-}
+  }
 
-export default Nav
+  renderButtons () {
+    return this.state.topics.map(this.renderButton)
+  }
+
+  renderButton (topic) {
+    return (
+      <div className='navButt' key={topic.id}><Link to={`topic/${topic.name}`} >{topic.name}</Link></div>
+    )
+  }
+
+  render () {
+    return (
+      <div>
+        {this.renderButtons()}
+      </div>
+    )
+  }
+
+}
