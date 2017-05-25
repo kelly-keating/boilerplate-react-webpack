@@ -7,7 +7,6 @@ import Nav from './Nav'
 import Topic from './Topic'
 import Description from './Description'
 
-
 const App = () => {
   return (
     <Router>
