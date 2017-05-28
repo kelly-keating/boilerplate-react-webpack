@@ -11,13 +11,14 @@ import Description from './Description'
 const App = () => {
   return (
     <div>
-      <Header />
       <Router>
         <span>
-          <Route path='/' component={Nav} />
-          <Route exact path='/' component={Home} />
-          <Route path='/topic/:topic' component={Topic} />
-          <Route path='/topic/:topic/:id' component={Description} />
+          <Route path='/' component={Header} />
+          <span id='content'>
+            <Route exact path='/' component={Home} />
+            <Route path='/topic/:topic' component={Topic} />
+            <Route path='/topic/:topic/:id' component={Description} />
+          </span>
         </span>
       </Router>
     </div>
