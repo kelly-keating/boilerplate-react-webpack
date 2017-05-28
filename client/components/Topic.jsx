@@ -1,28 +1,36 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-import codeData from '../../data/code'
+import * as api from '../api'
+
 import Code from './Code'
 
-const Topic = ({match}) => {
-  var topic = match.params.topic
 
-  return (
-    <span>
-      <h1>{topic}</h1>
-      {getCode(topic)}
-    </span>
-  )
-}
+export default class Topic extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      name: props.match.params.topic,
+      topic: {}
+    }
+  }
 
-function getCode(topic) {
-  return (
-    codeData[topic].map((code) => {
-      return(
-        <div className="codeSnippet" key={code.id} ><code><Link to={`/topic/${topic}/${code.id}`} >{code.text}</Link></code></div>
-      )
+  componentDidMount () {
+    api.getTopic(this.state.name, (error, topic) => {
+      if (error) {
+        console.log(error)
+      } else {
+        this.setState({topic})
+      }
     })
-  )
-}
+  }
 
-export default Topic
+  render () {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+        <h3>{this.state.topic.description}</h3>
+      </div>
+    )
+  }
+
+}

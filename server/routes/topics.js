@@ -10,4 +10,11 @@ router.get('/topics', (req, res) => {
     })
 })
 
+router.get('/topic/:topic', (req, res) => {
+  db.getTopic(req.params.topic, req.app.get('knex'))
+    .then((result) => {
+      res.json(result)
+    })
+})
+
 module.exports = router

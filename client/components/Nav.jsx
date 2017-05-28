@@ -17,7 +17,6 @@ export default class Nav extends React.Component {
         console.log(error)
       } else {
         this.setState({topics})
-        console.log(this.state)
       }
     })
   }
