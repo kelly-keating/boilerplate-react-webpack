@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import codeData from '../../data/code'
+import Code from './Code'
 
 const Topic = ({match}) => {
   var topic = match.params.topic

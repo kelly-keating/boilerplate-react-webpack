@@ -4,6 +4,9 @@ body {
 
 }
 
+
+/*  OVERLAY  */
+
 #header {
   position: fixed;
   background-color: #f7f5e6;
@@ -18,7 +21,6 @@ body {
 
 #nav {
   position: fixed;
-  background-color: #f7f5e6;
 
   top: 10vh;
   left: 0vw;
@@ -34,6 +36,9 @@ body {
 	margin: 2vw;
 	text-align: center;
 }
+
+
+/*  CONTENT  */
 
 #content {
 	position: absolute;
