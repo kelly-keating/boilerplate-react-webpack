@@ -9,7 +9,20 @@ function getTopic (topic, connection) {
   	.first()
 }
 
+function listCode (topic, connection) {
+  return connection('code')
+  	.join('topics', 'code.topic_id', '=', 'topics.id')
+  	.where('topics.name', topic)
+}
+
+function getCode (topic, code, connection) {
+  return connection('code')
+}
+
+
 module.exports = {
   getTopics,
-  getTopic
+  getTopic,
+  listCode,
+  getCode
 }

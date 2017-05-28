@@ -17,4 +17,18 @@ router.get('/topic/:topic', (req, res) => {
     })
 })
 
+router.get('/topic/:topic/code', (req, res) => {
+  db.listCode(req.params.topic, req.app.get('knex'))
+    .then((result) => {
+      res.json(result)
+    })
+})
+
+router.get('/topic/:topic/:id', (req, res) => {
+  db.getCode(req.params.topic, req.params.id, req.app.get('knex'))
+    .then((result) => {
+      res.json(result)
+    })
+})
+
 module.exports = router

@@ -24,6 +24,18 @@ function getTopic (topic, callback) {
     })
 }
 
+function listCode (topic, callback) {
+  request
+    .get(`/topic/${topic}/code`)
+    .end((err, res) => {
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
 function getCode (topic, id, callback) {
   request
     .get(`/topic/${topic}/${id}`)
@@ -39,5 +51,6 @@ function getCode (topic, id, callback) {
 module.exports = {
   getTopics,
   getTopic,
+  listCode,
   getCode
 }

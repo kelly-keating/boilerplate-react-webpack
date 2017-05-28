@@ -1,4 +1,5 @@
 import React from 'react'
+import {HashRouter as Router, Route} from 'react-router-dom'
 
 import * as api from '../api'
 
@@ -10,7 +11,8 @@ export default class Topic extends React.Component {
     super(props)
     this.state = {
       name: props.match.params.topic,
-      topic: {}
+      topic: {},
+      code: []
     }
   }
 
@@ -22,6 +24,19 @@ export default class Topic extends React.Component {
         this.setState({topic})
       }
     })
+    api.listCode(this.state.name, (error, code) => {
+      if (error) {
+        console.log(error)
+      } else {
+        this.setState({code})
+      }
+    })
+  }
+
+  renderCode() {
+    return (
+      <p>List</p>
+    )
   }
 
   render () {
@@ -29,6 +44,7 @@ export default class Topic extends React.Component {
       <div>
         <h1>{this.state.name}</h1>
         <h3>{this.state.topic.description}</h3>
+        {this.renderCode()}
       </div>
     )
   }
