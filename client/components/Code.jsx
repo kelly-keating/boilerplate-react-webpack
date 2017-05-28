@@ -7,8 +7,8 @@ export default class Code extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-    	topic: props.match.params.topic,
-    	id: props.match.params.id,
+    	topic: props.topic,
+    	id: props.id,
     	active: false,
     	code: {}
     }

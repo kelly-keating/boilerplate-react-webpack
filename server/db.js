@@ -10,13 +10,15 @@ function getTopic (topic, connection) {
 }
 
 function listCode (topic, connection) {
-  return connection('code')
+  return connection('code').select('*', 'code.id as code_id')
   	.join('topics', 'code.topic_id', '=', 'topics.id')
   	.where('topics.name', topic)
 }
 
-function getCode (topic, code, connection) {
+function getCode (id, connection) {
   return connection('code')
+  	.where('code.id', id)
+  	.first()
 }
 
 

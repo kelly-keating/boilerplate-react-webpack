@@ -33,9 +33,19 @@ export default class Topic extends React.Component {
     })
   }
 
-  renderCode() {
+  listCode() {
     return (
-      <p>List</p>
+      this.state.code.map((code) => {
+         return <Code key={code.code_id} topic={this.state.topic.name} id={code.code_id} />
+      })
+    )
+  }
+
+  renderList() {
+    return (
+      <div>
+        {this.listCode()}
+      </div>
     )
   }
 
@@ -44,7 +54,7 @@ export default class Topic extends React.Component {
       <div>
         <h1>{this.state.name}</h1>
         <h3>{this.state.topic.description}</h3>
-        {this.renderCode()}
+        {this.renderList()}
       </div>
     )
   }
