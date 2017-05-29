@@ -46,10 +46,14 @@ export default class Topic extends React.Component {
     }
   }
 
+  isActive (id) {
+    return this.state.active.indexOf(id) > -1
+  }
+
   listCode() {
     return (
       this.state.code.map((code) => {
-         return <Code key={code.code_id} topic={this.state.topic.name} id={code.code_id} toggle={this.toggleActive.bind(this)} />
+         return <Code key={code.code_id} topic={this.state.topic.name} id={code.code_id} toggle={this.toggleActive.bind(this)} isActive={this.isActive.bind(this)} />
       })
     )
   }

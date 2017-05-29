@@ -9,7 +9,8 @@ export default class Code extends React.Component {
     this.state = {
     	topic: props.topic,
     	id: props.id,
-    	code: {}
+    	code: {},
+      isActive: props.isActive(props.id)
     }
   }
 
@@ -24,11 +25,14 @@ export default class Code extends React.Component {
   }
 
   setActive () {
-  	this.setState({active: !this.state.active})
-    return false
+    this.props.toggle(this.state.id)
+  	this.setState({isActive: this.props.isActive(this.state.id)})
+    console.log(this.state.isActive);
+    console.log(this.props.isActive(this.state.id));
   }
 
   renderDescrip () {
+    console.log('render');
     return (
       <p>{this.state.code.description}</p>
     )
@@ -38,9 +42,9 @@ export default class Code extends React.Component {
   	return (
   		<div>
   		<div className='codeSnippet'>
-        	<button className='codeButt' onClick={() => this.props.toggle(this.state.id)}>{this.state.code.text}</button>
+        	<button className='codeButt' onClick={() => this.setActive()}>{this.state.code.text}</button>
     	</div>
-    	{this.state.active && this.renderDescrip}
+    	{this.state.isActive && this.renderDescrip()}
     	</div>
   	)
   }
