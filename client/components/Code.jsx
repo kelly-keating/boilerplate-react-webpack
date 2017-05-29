@@ -9,19 +9,16 @@ export default class Code extends React.Component {
     this.state = {
     	topic: props.topic,
     	id: props.id,
-    	active: false,
     	code: {}
     }
   }
 
   componentDidMount () {
-    console.log(this.state.topic + " id: " + this.state.id)
     api.getCode(this.state.topic, this.state.id, (error, code) => {
       if (error) {
         console.log(error)
       } else {
         this.setState({code})
-        console.log(this.state)
       }
     })
   }
@@ -41,7 +38,7 @@ export default class Code extends React.Component {
   	return (
   		<div>
   		<div className='codeSnippet'>
-        	<a href="#">{this.state.code.text}</a>
+        	<button className='codeButt' onClick={() => this.props.toggle(this.state.id)}>{this.state.code.text}</button>
     	</div>
     	{this.state.active && this.renderDescrip}
     	</div>

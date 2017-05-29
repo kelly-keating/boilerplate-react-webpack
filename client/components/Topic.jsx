@@ -12,7 +12,8 @@ export default class Topic extends React.Component {
     this.state = {
       name: props.match.params.topic,
       topic: {},
-      code: []
+      code: [],
+      active: []
     }
   }
 
@@ -33,10 +34,19 @@ export default class Topic extends React.Component {
     })
   }
 
+  toggleActive (id) {
+    if (this.state.active.indexOf(id) === -1) {
+      this.state.active.push(id);
+      console.log(this.state.active);
+    } else {
+      console.log("element found");
+    }
+  }
+
   listCode() {
     return (
       this.state.code.map((code) => {
-         return <Code key={code.code_id} topic={this.state.topic.name} id={code.code_id} />
+         return <Code key={code.code_id} topic={this.state.topic.name} id={code.code_id} toggle={this.toggleActive.bind(this)} />
       })
     )
   }
