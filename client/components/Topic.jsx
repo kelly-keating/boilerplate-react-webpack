@@ -38,11 +38,9 @@ export default class Topic extends React.Component {
   toggleActive (id) {
     var index = this.state.active.indexOf(id)
     if ( index === -1) {
-      this.state.active.push(id);
-      console.log(this.state.active);
+      this.state.active.push(id)
     } else {
       this.state.active.pop(index)
-      console.log(this.state.active);
     }
   }
 
