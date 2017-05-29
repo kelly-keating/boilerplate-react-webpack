@@ -21,7 +21,6 @@ function getCode (id, connection) {
   	.first()
 }
 
-
 module.exports = {
   getTopics,
   getTopic,
