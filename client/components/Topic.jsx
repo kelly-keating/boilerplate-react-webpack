@@ -18,6 +18,7 @@ export default class Topic extends React.Component {
   }
 
   componentDidMount () {
+    console.log(this.state.name);
     api.getTopic(this.state.name, (error, topic) => {
       if (error) {
         console.log(error)
@@ -35,11 +36,13 @@ export default class Topic extends React.Component {
   }
 
   toggleActive (id) {
-    if (this.state.active.indexOf(id) === -1) {
+    var index = this.state.active.indexOf(id)
+    if ( index === -1) {
       this.state.active.push(id);
       console.log(this.state.active);
     } else {
-      console.log("element found");
+      this.state.active.pop(index)
+      console.log(this.state.active);
     }
   }
 
