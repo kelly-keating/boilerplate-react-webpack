@@ -6,12 +6,11 @@ import * as api from '../api'
 import Code from './Code'
 
 
-export default class Topic extends React.Component {
+export default class Example extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      name: props.match.params.topic,
-      topic: {},
+      //get example from props
       code: [],
       active: []
     }
@@ -33,10 +32,6 @@ export default class Topic extends React.Component {
         this.setState({code})
       }
     })
-  }
-
-  componentWillReceiveProps () {
-    window.location.reload()
   }
 
   toggleActive (id) {

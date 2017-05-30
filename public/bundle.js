@@ -11573,6 +11573,11 @@ var Topic = function (_React$Component) {
       });
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps() {
+      window.location.reload();
+    }
+  }, {
     key: 'toggleActive',
     value: function toggleActive(id) {
       var index = this.state.active.indexOf(id);
