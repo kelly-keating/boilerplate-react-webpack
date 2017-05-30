@@ -3,7 +3,7 @@ body {
   color: #CDDAF5;
 }
 
-a {
+a:visited {
   text-decoration: none;
 }
 
