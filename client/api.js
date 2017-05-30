@@ -60,10 +60,36 @@ function getUses (callback) {
     })
 }
 
+function getUse (id, callback) {
+  request
+  .get(`/uses/use/${id}`)
+    .end((err, res) => {
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
+function getCodeFromQuestion (id, callback) {
+  request
+  .get(`/uses/code/${id}`)
+    .end((err, res) => {
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
 module.exports = {
   getTopics,
   getTopic,
   listCode,
   getCode,
-  getUses
+  getUses,
+  getUse,
+  getCodeFromQuestion
 }

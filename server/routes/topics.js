@@ -38,4 +38,18 @@ router.get('/uses', (req, res) => {
     })
 })
 
+router.get('/uses/use/:id', (req, res) => {
+  db.getUse(req.params.useId, req.app.get('knex'))
+    .then((result) => {
+      res.json(result)
+    })
+})
+
+router.get('/uses/code/:id', (req, res) => {
+  db.getCodeFromQuestion(req.params.id, req.app.get('knex'))
+    .then((result) => {
+      res.json(result)
+    })
+})
+
 module.exports = router
