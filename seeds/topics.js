@@ -10,7 +10,7 @@ exports.seed = function (knex, Promise) {
         {id: 9903, name: 'js', alias: 'JavaScript', description: 'magic'},
         {id: 9904, name: 'heroku', alias: 'Heroku', description: 'tis I'},
         {id: 9905, name: 'react', alias: 'React', description: 'invisible magic'},
-        {id: 9909, name: 'npm', alias: 'Node Packages', description: 'bundles of joy'}
+        {id: 9909, name: 'npm', alias: 'Packages', description: 'bundles of joy'}
       ])
     })
 }

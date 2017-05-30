@@ -7529,7 +7529,7 @@ var Nav = function (_React$Component) {
         _react2.default.createElement(
           _reactRouterDom.Link,
           { to: '/topic/' + topic.name },
-          topic.name
+          topic.alias
         )
       );
     }
@@ -11239,7 +11239,8 @@ var App = function App() {
       _react2.default.createElement(
         'span',
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Header2.default }),
+        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'span',
           { id: 'content' },
@@ -11334,8 +11335,8 @@ var Code = function (_React$Component) {
     key: 'renderDescrip',
     value: function renderDescrip() {
       return _react2.default.createElement(
-        'p',
-        null,
+        'div',
+        { className: 'codeDescribe' },
         this.state.code.description
       );
     }
@@ -11383,26 +11384,17 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Nav = __webpack_require__(64);
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header() {
   return _react2.default.createElement(
-    'span',
-    null,
+    'div',
+    { id: 'header' },
     _react2.default.createElement(
-      'div',
-      { id: 'header' },
-      _react2.default.createElement(
-        'h4',
-        null,
-        'eda cheatsheet'
-      )
-    ),
-    _react2.default.createElement(_Nav2.default, null)
+      'h4',
+      null,
+      'eda cheatsheet'
+    )
   );
 };
 

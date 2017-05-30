@@ -12,7 +12,8 @@ const App = () => {
     <div>
       <Router>
         <span>
-          <Route path='/' component={Header} />
+          <Header />
+          <Nav />
           <span id='content'>
             <Route exact path='/' component={Home} />
             <Route path='/topic/:topic' component={Topic} />

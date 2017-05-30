@@ -1,7 +1,10 @@
 body {
-  background-color: #e8e8e8;
-  color: #333a56;
+  background-color: #C4CAD5;
+  color: #CDDAF5;
+}
 
+a {
+  text-decoration: none;
 }
 
 
@@ -9,7 +12,7 @@ body {
 
 #header {
   position: fixed;
-  background-color: #f7f5e6;
+  background-color: #294680;
 
   top: 0vh;
   left: 0vw;
@@ -21,7 +24,6 @@ body {
 
 #nav {
   position: fixed;
-
   top: 10vh;
   left: 0vw;
   width: 14vw;
@@ -34,27 +36,34 @@ body {
 	width: 10vw;
 	height: 5vh;
 	margin: 2vw;
+  text-decoration: none;
 	text-align: center;
+  font-size: 1em;
 }
 
 
 /*  CONTENT  */
 
 #content {
+  color: #0C1D3F;
 	position: absolute;
 	margin-top: 20vh;
-	margin-left: 20vw;
+  margin-left: 20vw;
+  margin-bottom: 20vh;
 	width: 60vw;
 }
 
 .codeButt {
   background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  font-size: 1em;
+}
 
+.codeDescribe {
+  padding: 25px 32px;
 }

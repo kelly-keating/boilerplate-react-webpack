@@ -31,7 +31,7 @@ export default class Code extends React.Component {
 
   renderDescrip () {
     return (
-      <p>{this.state.code.description}</p>
+      <div className='codeDescribe'>{this.state.code.description}</div>
     )
   }
 
