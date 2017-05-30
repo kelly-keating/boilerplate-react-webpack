@@ -31,4 +31,11 @@ router.get('/topic/:topic/:id', (req, res) => {
     })
 })
 
+router.get('/uses', (req, res) => {
+  db.getUses(req.app.get('knex'))
+    .then((result) => {
+      res.json(result)
+    })
+})
+
 module.exports = router

@@ -21,9 +21,14 @@ function getCode (id, connection) {
   	.first()
 }
 
+function getUses (connection) {
+  return connection('uses')
+}
+
 module.exports = {
   getTopics,
   getTopic,
   listCode,
-  getCode
+  getCode,
+  getUses
 }
