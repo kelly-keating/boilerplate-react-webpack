@@ -27,7 +27,7 @@ export default class Nav extends React.Component {
 
   renderButton (topic) {
     return (
-      <div className='navButt' key={topic.id} ><Link to={`/topic/${topic.name}`} >{topic.name}</Link></div>
+      <div className='navButt' key={topic.id} ><Link to={`/topic/${topic.name}`} >{topic.alias}</Link></div>
     )
   }
 
