@@ -2676,8 +2676,8 @@ function listCode(topic, callback) {
   });
 }
 
-function getCode(topic, id, callback) {
-  request.get('/topic/' + topic + '/' + id).end(function (err, res) {
+function getCode(id, callback) {
+  request.get('/topic/code/' + id).end(function (err, res) {
     if (err) {
       callback(err);
     } else {
@@ -7528,7 +7528,6 @@ var Code = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Code.__proto__ || Object.getPrototypeOf(Code)).call(this, props));
 
     _this.state = {
-      topic: props.topic,
       id: props.id,
       code: {},
       isActive: props.isActive(props.id)
@@ -7541,7 +7540,7 @@ var Code = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      api.getCode(this.state.topic, this.state.id, function (error, code) {
+      api.getCode(this.state.id, function (error, code) {
         if (error) {
           console.log(error);
         } else {
@@ -11633,7 +11632,7 @@ var Topic = function (_React$Component) {
       var _this3 = this;
 
       return this.state.code.map(function (code) {
-        return _react2.default.createElement(_Code2.default, { key: code.code_id, topic: _this3.state.topic.name, id: code.code_id, toggle: _this3.toggleActive.bind(_this3), isActive: _this3.isActive.bind(_this3) });
+        return _react2.default.createElement(_Code2.default, { key: code.code_id, id: code.code_id, toggle: _this3.toggleActive.bind(_this3), isActive: _this3.isActive.bind(_this3) });
       });
     }
   }, {
@@ -11741,12 +11740,9 @@ var Use = function (_React$Component) {
         if (error) {
           console.log(error);
         } else {
-          {
-            console.log(code);
-          }
           _this2.setState({ code: code });
           {
-            console.log(_this2.state.code);
+            console.log(_this2.state.question);
           }
         }
       });
@@ -11777,7 +11773,7 @@ var Use = function (_React$Component) {
       var _this3 = this;
 
       return this.state.code.map(function (code) {
-        return _react2.default.createElement(_Code2.default, { key: code.code_id, topic: _this3.state.topic.name, id: code.code_id, toggle: _this3.toggleActive.bind(_this3), isActive: _this3.isActive.bind(_this3) });
+        return _react2.default.createElement(_Code2.default, { key: code.code_id, id: code.code_id, toggle: _this3.toggleActive.bind(_this3), isActive: _this3.isActive.bind(_this3) });
       });
     }
   }, {

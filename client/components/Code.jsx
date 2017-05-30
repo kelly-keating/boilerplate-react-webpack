@@ -7,7 +7,6 @@ export default class Code extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-    	topic: props.topic,
     	id: props.id,
     	code: {},
       isActive: props.isActive(props.id)
@@ -15,7 +14,7 @@ export default class Code extends React.Component {
   }
 
   componentDidMount () {
-    api.getCode(this.state.topic, this.state.id, (error, code) => {
+    api.getCode(this.state.id, (error, code) => {
       if (error) {
         console.log(error)
       } else {

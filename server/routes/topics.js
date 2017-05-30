@@ -24,7 +24,7 @@ router.get('/topic/:topic/code', (req, res) => {
     })
 })
 
-router.get('/topic/:topic/:id', (req, res) => {
+router.get('/topic/code/:id', (req, res) => {
   db.getCode(req.params.id, req.app.get('knex'))
     .then((result) => {
       res.json(result)

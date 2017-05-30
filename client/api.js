@@ -36,9 +36,9 @@ function listCode (topic, callback) {
     })
 }
 
-function getCode (topic, id, callback) {
+function getCode (id, callback) {
   request
-    .get(`/topic/${topic}/${id}`)
+    .get(`/topic/code/${id}`)
     .end((err, res) => {
       if (err) {
         callback(err)

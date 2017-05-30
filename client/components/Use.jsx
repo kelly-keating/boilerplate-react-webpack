@@ -29,9 +29,8 @@ export default class Use extends React.Component {
       if (error) {
         console.log(error)
       } else {
-        {console.log(code)}
         this.setState({code})
-        {console.log(this.state.code)}
+        {console.log(this.state.question)}
 
       }
     })
@@ -57,7 +56,7 @@ export default class Use extends React.Component {
   listCode () {
     return (
       this.state.code.map((code) => {
-         return <Code key={code.code_id} topic={this.state.topic.name} id={code.code_id} toggle={this.toggleActive.bind(this)} isActive={this.isActive.bind(this)} />
+         return <Code key={code.code_id} id={code.code_id} toggle={this.toggleActive.bind(this)} isActive={this.isActive.bind(this)} />
       })
     )
   }
