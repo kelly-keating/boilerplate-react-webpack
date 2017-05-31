@@ -39,7 +39,7 @@ router.get('/uses', (req, res) => {
 })
 
 router.get('/uses/use/:id', (req, res) => {
-  db.getUse(req.params.useId, req.app.get('knex'))
+  db.getUse(req.params.id, req.app.get('knex'))
     .then((result) => {
       res.json(result)
     })

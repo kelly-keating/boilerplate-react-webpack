@@ -11876,7 +11876,6 @@ var UseList = function (_React$Component) {
           console.log(error);
         } else {
           _this2.setState({ uses: uses });
-          console.log(_this2.state);
         }
       });
     }

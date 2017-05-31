@@ -3,7 +3,6 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 import * as api from '../api'
 
-
 export default class UseList extends React.Component {
   constructor (props) {
     super(props)
@@ -26,7 +25,6 @@ export default class UseList extends React.Component {
         console.log(error)
       } else {
         this.setState({uses})
-        console.log(this.state)
       }
     })
   }
@@ -36,8 +34,8 @@ export default class UseList extends React.Component {
       return use.topic_id === topicId
     })
     return (
-      onTopic.map((question) =>{
-        return <div><Link to={`/uses/${question.id}`}>{question.question}</Link></div>
+      onTopic.map((question) => {
+        return <div><Link  to={`/uses/${question.id}`}>{question.question}</Link></div>
       })
     )
   }
