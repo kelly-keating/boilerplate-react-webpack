@@ -11339,9 +11339,44 @@ var Header = function Header() {
     'div',
     { id: 'header' },
     _react2.default.createElement(
-      'h4',
-      null,
-      'eda cheatsheet'
+      'div',
+      { className: 'headerButt', id: 'title' },
+      _react2.default.createElement(
+        'a',
+        { href: '#' },
+        'eda cheatsheet'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { id: 'headerLinks' },
+      _react2.default.createElement(
+        'div',
+        { className: 'headerButt' },
+        _react2.default.createElement(
+          'a',
+          { href: '#/uses' },
+          'Examples'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'headerButt' },
+        _react2.default.createElement(
+          'a',
+          { href: '#' },
+          'Suggestions'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'headerButt' },
+        _react2.default.createElement(
+          'a',
+          { href: '#' },
+          'Search'
+        )
+      )
     )
   );
 };

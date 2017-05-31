@@ -15,7 +15,7 @@ exports.seed = function (knex, Promise) {
         {id: 88204, topic_id: 9902, text: 'git branch', description: 'Will list all the branches that exist on your computer and show you the one you are currently on.'},
         {id: 88205, topic_id: 9902, text: 'git status', description: 'Shows the differences between what is saved your work area and what has been commited to git'},
         {id: 88206, topic_id: 9902, text: 'git add .', description: 'Will look for any changes in the files, using the one you are in (.) as a base, and add them to be committed. Can use -A instead of . as it specifies all files instead of just those under the current folder'},
-        {id: 88207, topic_id: 9902, text: 'git commit -m "some message"', description: 'Adds the commit to HEAD but doesn\'t tell github about it yet.'},
+        {id: 88207, topic_id: 9902, text: 'git commit -m "some message"', description: 'Logs the commit and it\'s message to HEAD but doesn\'t tell github about it yet.'},
         {id: 88208, topic_id: 9902, text: 'git commit -am "my message"', description: 'Will forgo the add step and assume there are no new/deleted files.'},
         {id: 88209, topic_id: 9902, text: 'git push origin my-branch', description: 'Sends the changes to github along with a log of the commits.'},
         // set upstream

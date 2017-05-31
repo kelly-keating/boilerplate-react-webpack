@@ -35,7 +35,6 @@ function getCodeFromQuestion (id, connection) {
   return connection('code').select('*', 'code.id as code_id')
     .join('useToCode', 'code.id','=','useToCode.code_id')
     .where('useToCode.uses_id', id)
-    //where id == useToCode code_id
 }
 
 module.exports = {

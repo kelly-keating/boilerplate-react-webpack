@@ -3,7 +3,12 @@ import React from 'react'
 const Header = () => {
   return (
     <div id='header'>
-      <h4>eda cheatsheet</h4>
+      <div className='headerButt' id='title'><a href='#'>eda cheatsheet</a></div>
+      <div id='headerLinks'>
+        <div className='headerButt'><a href='#/uses'>Examples</a></div>
+        <div className='headerButt'><a href='#'>Suggestions</a></div>
+        <div className='headerButt'><a href='#'>Search</a></div>
+      </div>
     </div>
   )
 }
