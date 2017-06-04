@@ -2650,7 +2650,7 @@ function getTopics(callback) {
 }
 
 function getTopic(topic, callback) {
-  request.get('/topic/' + topic).end(function (err, res) {
+  request.get('/topics/' + topic).end(function (err, res) {
     if (err) {
       callback(err);
     } else {
@@ -2660,7 +2660,7 @@ function getTopic(topic, callback) {
 }
 
 function listCode(topic, callback) {
-  request.get('/topic/' + topic + '/code').end(function (err, res) {
+  request.get('/topics/' + topic + '/code').end(function (err, res) {
     if (err) {
       callback(err);
     } else {
@@ -2670,7 +2670,7 @@ function listCode(topic, callback) {
 }
 
 function getCode(id, callback) {
-  request.get('/topic/code/' + id).end(function (err, res) {
+  request.get('/topics/code/' + id).end(function (err, res) {
     if (err) {
       callback(err);
     } else {
@@ -11289,7 +11289,7 @@ var App = function App() {
           'span',
           { id: 'content' },
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/topic/:topic', component: _Topic2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/topics/:topic', component: _Topic2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/uses', component: _UseList2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/uses/:id', component: _Use2.default })
         )
@@ -11538,7 +11538,7 @@ var Nav = function (_React$Component) {
         { className: 'navButt', key: topic.id },
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/topic/' + topic.name },
+          { to: '/topics/' + topic.name },
           topic.alias
         )
       );

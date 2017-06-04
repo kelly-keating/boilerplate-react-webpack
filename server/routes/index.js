@@ -10,21 +10,21 @@ router.get('/topics', (req, res) => {
     })
 })
 
-router.get('/topic/:topic', (req, res) => {
+router.get('/topics/:topic', (req, res) => {
   db.getTopic(req.params.topic, req.app.get('knex'))
     .then((result) => {
       res.json(result)
     })
 })
 
-router.get('/topic/:topic/code', (req, res) => {
+router.get('/topics/:topic/code', (req, res) => {
   db.listCode(req.params.topic, req.app.get('knex'))
     .then((result) => {
       res.json(result)
     })
 })
 
-router.get('/topic/code/:id', (req, res) => {
+router.get('/topics/code/:id', (req, res) => {
   db.getCode(req.params.id, req.app.get('knex'))
     .then((result) => {
       res.json(result)

@@ -14,7 +14,7 @@ function getTopics (callback) {
 
 function getTopic (topic, callback) {
   request
-    .get(`/topic/${topic}`)
+    .get(`/topics/${topic}`)
     .end((err, res) => {
       if (err) {
         callback(err)
@@ -26,7 +26,7 @@ function getTopic (topic, callback) {
 
 function listCode (topic, callback) {
   request
-    .get(`/topic/${topic}/code`)
+    .get(`/topics/${topic}/code`)
     .end((err, res) => {
       if (err) {
         callback(err)
@@ -38,7 +38,7 @@ function listCode (topic, callback) {
 
 function getCode (id, callback) {
   request
-    .get(`/topic/code/${id}`)
+    .get(`/topics/code/${id}`)
     .end((err, res) => {
       if (err) {
         callback(err)
