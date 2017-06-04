@@ -36,9 +36,45 @@ function listCode (topic, callback) {
     })
 }
 
-function getCode (topic, id, callback) {
+function getCode (id, callback) {
   request
-    .get(`/topic/${topic}/${id}`)
+    .get(`/topic/code/${id}`)
+    .end((err, res) => {
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
+function getUses (callback) {
+  request
+  .get(`/uses`)
+    .end((err, res) => {
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
+function getUse (id, callback) {
+  request
+  .get(`/uses/use/${id}`)
+    .end((err, res) => {
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
+function getCodeFromQuestion (id, callback) {
+  request
+  .get(`/uses/code/${id}`)
     .end((err, res) => {
       if (err) {
         callback(err)
@@ -52,5 +88,8 @@ module.exports = {
   getTopics,
   getTopic,
   listCode,
-  getCode
+  getCode,
+  getUses,
+  getUse,
+  getCodeFromQuestion
 }

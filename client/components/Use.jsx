@@ -6,32 +6,38 @@ import * as api from '../api'
 import Code from './Code'
 
 
-export default class Example extends React.Component {
+export default class Use extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      //get example from props
+      id: props.match.params.id,
+      question: {},
       code: [],
       active: []
     }
   }
 
   componentDidMount () {
-    console.log(this.state.name)
-    api.getTopic(this.state.name, (error, topic) => {
+    api.getUse(this.state.id, (error, question) => {
       if (error) {
         console.log(error)
       } else {
-        this.setState({topic})
+        this.setState({question})
       }
     })
-    api.listCode(this.state.name, (error, code) => {
+    api.getCodeFromQuestion(this.state.id, (error, code) => {
       if (error) {
         console.log(error)
       } else {
         this.setState({code})
+        {console.log(this.state.question)}
+
       }
     })
+  }
+
+  componentWillReceiveProps () {
+    window.location.reload()
   }
 
   toggleActive (id) {
@@ -50,7 +56,7 @@ export default class Example extends React.Component {
   listCode () {
     return (
       this.state.code.map((code) => {
-         return <Code key={code.code_id} topic={this.state.topic.name} id={code.code_id} toggle={this.toggleActive.bind(this)} isActive={this.isActive.bind(this)} />
+         return <Code key={code.code_id} id={code.code_id} toggle={this.toggleActive.bind(this)} isActive={this.isActive.bind(this)} />
       })
     )
   }
@@ -66,8 +72,8 @@ export default class Example extends React.Component {
   render () {
     return (
       <div>
-        <h1>{this.state.name}</h1>
-        <h3>{this.state.topic.description}</h3>
+        <h1>{this.state.question.question}</h1>
+        <h3>{this.state.question.description}</h3>
         {this.renderList()}
       </div>
     )

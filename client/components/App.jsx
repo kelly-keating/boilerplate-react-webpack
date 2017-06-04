@@ -6,6 +6,9 @@ import Home from './Home'
 import Header from './Header'
 import Nav from './Nav'
 import Topic from './Topic'
+import UseList from './UseList'
+import Use from './Use'
+
 
 const App = () => {
   return (
@@ -17,6 +20,8 @@ const App = () => {
           <span id='content'>
             <Route exact path='/' component={Home} />
             <Route path='/topic/:topic' component={Topic} />
+            <Route exact path='/uses' component={UseList} />
+            <Route path='/uses/:id' component={Use} />
           </span>
         </span>
       </Router>
