@@ -14,9 +14,3 @@ test.cb('<Header />', (t) => {
   t.is(wrapper.contains('eda cheatsheet'), true, 'displays title')
   t.end()
 })
-
-test.cb('<Nav />', (t) => {
-  const wrapper = render(<Nav />)
-  t.is(wrapper.find('navButt.a').text(), 'Command Line', 'displays nav button')
-  t.end()
-})
