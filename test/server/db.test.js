@@ -30,7 +30,7 @@ test('listCode', (t) => {
   return db.listCode('git', t.context.connection)
     .then(function (result) {
       return new Promise((resolve, reject) => {
-        t.is(result[0].text, 'git login') // nope :P
+        t.is(result[0].text, 'git login')
         resolve()
       })
     })
