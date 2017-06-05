@@ -1,18 +1,20 @@
+var test = require('ava')
 
-import test from 'ava'
+var configureDatabase = require('./setup-db')
+configureDatabase(test)
 
-import app from '../../server/server'
-import setupDb from './setup-db'
-import db from '../../server/db'
-
-setupDb(test, (knex) => app.set('knex', knex))
+var db = require('../../server/db')
 
 test('getTopics', (t) => {
-  return db.getTopics(t.context.db)
+  return db.getTopics(t.context.connection)
+    .then((result) => {
+      console.log(result)
+      return result
+    })
     .then(function (result) {
       return new Promise((resolve, reject) => {
         var actual = result.length
-        t.is(actual, 6)
+        t.is(actual, 3)
         resolve()
       })
     })
