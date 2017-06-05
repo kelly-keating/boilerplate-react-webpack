@@ -20,7 +20,7 @@ test('<Nav />', t => {
   t.is(wrapper.find('#nav').exists(), true)
 })
 
-test('Examples link gos to page', t => {
+test('Examples link goes to page', t => {
   const wrapper = mount(<App />)
   t.is(wrapper.find('.examples').exists(), false)
   wrapper.find('#examples-link').simulate('click')
