@@ -16,7 +16,6 @@ export default class Topic extends React.Component {
         console.log(error)
       } else {
         this.setState({topics})
-        console.log(this.state)
       }
     })
   }

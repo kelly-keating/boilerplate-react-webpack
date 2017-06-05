@@ -30,8 +30,6 @@ export default class Use extends React.Component {
         console.log(error)
       } else {
         this.setState({code})
-        {console.log(this.state.question)}
-
       }
     })
   }

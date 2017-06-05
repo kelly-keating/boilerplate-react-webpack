@@ -35,7 +35,7 @@ export default class UseList extends React.Component {
     })
     return (
       onTopic.map((question) => {
-        return <div><Link  to={`/uses/${question.id}`}>{question.question}</Link></div>
+        return <div key={question.topic_id}><Link to={`/uses/${question.id}`}>{question.question}</Link></div>
       })
     )
   }

@@ -20,6 +20,13 @@ test('<Nav />', t => {
   t.is(wrapper.find('#nav').exists(), true)
 })
 
+test('Examples link gos to page', t => {
+  const wrapper = mount(<App />)
+  t.is(wrapper.find('.examples').exists(), false)
+  wrapper.find('#examples-link').simulate('click')
+  //test exists now
+})
+
 /* In later tests on nav, examples
 { Error: connect ECONNREFUSED 127.0.0.1:80
     at Object.exports._errnoException (util.js:1026:11)
@@ -31,4 +38,6 @@ test('<Nav />', t => {
   address: '127.0.0.1',
   port: 80,
   response: undefined }
+
+  http://localhost:3000 in api call perhaps?
 */

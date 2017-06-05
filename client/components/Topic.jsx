@@ -18,7 +18,6 @@ export default class Topic extends React.Component {
   }
 
   componentDidMount () {
-    console.log(this.state.name)
     api.getTopic(this.state.name, (error, topic) => {
       if (error) {
         console.log(error)

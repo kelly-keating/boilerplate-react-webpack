@@ -11468,7 +11468,6 @@ var Topic = function (_React$Component) {
           console.log(error);
         } else {
           _this2.setState({ topics: topics });
-          console.log(_this2.state);
         }
       });
     }
@@ -11682,7 +11681,6 @@ var Topic = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      console.log(this.state.name);
       api.getTopic(this.state.name, function (error, topic) {
         if (error) {
           console.log(error);
@@ -11833,9 +11831,6 @@ var Use = function (_React$Component) {
           console.log(error);
         } else {
           _this2.setState({ code: code });
-          {
-            console.log(_this2.state.question);
-          }
         }
       });
     }
@@ -11980,7 +11975,7 @@ var UseList = function (_React$Component) {
       return onTopic.map(function (question) {
         return _react2.default.createElement(
           'div',
-          null,
+          { key: question.topic_id },
           _react2.default.createElement(
             _reactRouterDom.Link,
             { to: '/uses/' + question.id },
