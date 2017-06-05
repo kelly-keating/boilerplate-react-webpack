@@ -51,9 +51,11 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "knex": "^0.13.0",
+    "passport": "^0.3.2",
     "pg": "^6.2.3",
     "superagent": "^3.5.2"
   }
