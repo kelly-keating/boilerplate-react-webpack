@@ -5,7 +5,7 @@ const Header = () => {
     <div id='header'>
       <div className='headerButt' id='title'><a href='#'>eda cheatsheet</a></div>
       <div id='headerLinks'>
-        <div className='headerButt'><a href='#/uses'>Examples</a></div>
+        <div className='headerButt' id='examples-link'><a href='#/uses'>Examples</a></div>
         <div className='headerButt'><a href='#'>Suggestions</a></div>
         <div className='headerButt'><a href='#'>Search</a></div>
       </div>

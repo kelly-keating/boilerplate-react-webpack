@@ -2,7 +2,6 @@ var path = require('path')
 var express = require('express')
 var bodyParser = require('body-parser')
 
-var routes = require('./routes/index')
 var topics = require('./routes/topics')
 var uses = require('./routes/uses')
 

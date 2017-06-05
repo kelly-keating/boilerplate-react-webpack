@@ -44,7 +44,7 @@ export default class UseList extends React.Component {
     return (
       this.state.topics.map((topic) => {
         return (
-          <div>
+          <div className='examples'>
             <h3 key={topic.id}>{topic.alias}</h3>
             {this.renderQuestions(topic.id)}
           </div>

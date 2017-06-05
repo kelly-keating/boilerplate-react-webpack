@@ -8,6 +8,9 @@ import Nav from './Nav'
 import Topic from './Topic'
 import UseList from './UseList'
 import Use from './Use'
+import Forum from './Forum'
+import Login from './Login'
+
 
 
 const App = () => {
@@ -22,6 +25,8 @@ const App = () => {
             <Route path='/topics/:topic' component={Topic} />
             <Route exact path='/uses' component={UseList} />
             <Route path='/uses/:id' component={Use} />
+            <Route path='/forum/login' component={Login} />
+            <Route path='/forum' component={Forum} />
           </span>
         </span>
       </Router>
