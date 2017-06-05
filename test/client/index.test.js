@@ -24,7 +24,7 @@ test('Examples link goes to page', t => {
   const wrapper = mount(<App />)
   t.is(wrapper.find('.examples').exists(), false)
   wrapper.find('#examples-link').simulate('click')
-  //test exists now
+  //test if exists now
 })
 
 /* In later tests on nav, examples

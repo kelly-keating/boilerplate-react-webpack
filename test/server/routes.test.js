@@ -3,18 +3,17 @@ import request from 'supertest'
 
 import server from '../../server/server'
 
-var setupDb = require('./setup-db')
-
-setupDb(test, server)
+var configureDatabase = require('./helpers/database-config')
+configureDatabase(test, server)
 
 test('GET /topics', (t) => {
   return request(t.context.app)
     .get('/topics')
     .expect(200)
     .then((res) => {
-        t.is(res.body.length, 9)
+      return new Promise((resolve, reject) => {
+        t.is(res.body.length, 6)
+        resolve()
       })
-      .catch((err) => {
-        console.log(err.message)
-      })
+    })
 })
