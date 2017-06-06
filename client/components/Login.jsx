@@ -1,25 +1,19 @@
 import React from 'react'
 
-export default class Login extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      loggedIn: this.props.status,
-      user: this.props.user
-    }
-  }
-
-  render () {
+ const Login = () => {
     return (
-      <div id='login'>
-        LOGIN
-        <form>
-          Username:<br/>
-        <input type="text" name="username"/><br/>
-          Password:<br/>
-        <input type="text" name="password"/><br/>
-        </form>
+      <div id='login-container'>
+        <div id='login'>
+          LOGIN
+          <form>
+            Username:<br/>
+          <input type="text" name="username"/><br/>
+            Password:<br/>
+          <input type="text" name="password"/><br/>
+          </form>
+        </div>
       </div>
     )
-  }
 }
+
+export default Login
